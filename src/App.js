@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {Fragment} from 'react'
+import L from 'leaflet'
+import MenuComponent from './components/MenuComponent'
+import LeafletMap from './components/LeafletMap'
+
+// Путь до маркеров
+L.Icon.Default.imagePath = "https://unpkg.com/leaflet@1.7.1/dist/images/";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <MenuComponent />
+      <LeafletMap />
+    </Fragment>
   );
 }
 
