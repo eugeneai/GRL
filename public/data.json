@@ -33976,7 +33976,7 @@
             "type": "Feature",
             "properties": {
                 "Name": "Деронский",
-                "ID": "RUAF_1415"
+                "ID": "RUAF_1415-1"
             },
             "geometry": {
                 "type": "LineString",
@@ -34008,7 +34008,7 @@
             "type": "Feature",
             "properties": {
                 "Name": "Деронский",
-                "ID": "RUAF_1415"
+                "ID": "RUAF_1415-2"
             },
             "geometry": {
                 "type": "LineString",
@@ -35772,7 +35772,7 @@
             "type": "Feature",
             "properties": {
                 "Name": "Деронский",
-                "ID": "RUAF_1415"
+                "ID": "RUAF_1415-3"
             },
             "geometry": {
                 "type": "LineString",
