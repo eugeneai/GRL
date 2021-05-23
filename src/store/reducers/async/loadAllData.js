@@ -29,7 +29,6 @@ export const fetchSparql = (nameQuery = null) => {
       .then(array => {
         array.shift()
         array.pop()
-        console.log(array)
         dispatch(tLoad(array))
       }, (error) => {
         console.error(error)
@@ -37,10 +36,3 @@ export const fetchSparql = (nameQuery = null) => {
     
   }
 }
-
-// const searchRegExp = /duck/g;
-// const replaceWith = 'goose';
-//
-// const result = 'duck duck go'.replace(searchRegExp, replaceWith);
-//
-// result; // => 'goose goose go'
