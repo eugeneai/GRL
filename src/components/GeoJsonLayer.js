@@ -4,11 +4,7 @@ import { useSelector } from 'react-redux'
 
 export default function GeoJsonLayer({lineParameters}) {
   const features = useSelector(state => state.data.features)
-
-  let style = () => {
-    return { ...lineParameters}
-  }
-
+  
   return (    
     <FeatureGroup>
       {features.map(f => {
@@ -16,7 +12,7 @@ export default function GeoJsonLayer({lineParameters}) {
           <GeoJSON 
             key={f.properties.ID} 
             data={f} 
-            style={style()}
+            style={lineParameters}
           >
             <Popup>{f.properties.Name}</Popup>
           </GeoJSON>
