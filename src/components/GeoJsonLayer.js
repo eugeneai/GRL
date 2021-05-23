@@ -18,7 +18,7 @@ export default function GeoJsonLayer({lineParameters}) {
             data={f} 
             style={style()}
           >
-            <Popup>{f.properties.name}</Popup>
+            <Popup>{f.properties.Name}</Popup>
           </GeoJSON>
         )  
       })}
