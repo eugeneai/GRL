@@ -17,7 +17,7 @@ export default function LeafletMap() {
     console.log("LeafletMap", {...lineParameters})
     dispatch({type: "TOOGLE_VISIBLE"})
     setTimeout(() => dispatch({type: "TOOGLE_VISIBLE"}), 25)
-  }, [lineParameters])
+  }, [lineParameters, dispatch])
 
   return (
     <MapContainer center={position} zoom={7}>

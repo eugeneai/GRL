@@ -1,5 +1,5 @@
 import { load_all_data } from "../dataReducer";
-import { tLoad } from '../sparqlReducer'
+import { batch } from 'react-redux'
 import urls from './urls'
 
 export const fetchFeatures = () => {
@@ -15,21 +15,28 @@ export const fetchFeatures = () => {
   }
 }
 
-export const fetchSparql = (nameQuery = null) => {
+export const fetchSparql = ({type, option}) => {
   
-  if (nameQuery == null) return (dispatch) => {
-    dispatch(tLoad([]))
+  if (option === "All") return (dispatch) => {
+    batch(() => {
+      dispatch({type: type, payload: []})
+      dispatch({type: "INTERSECTION"})
+    })
+    
   }
   
   return (dispatch) => {
     
-    fetch(urls[nameQuery])
+    fetch(urls[option])
       .then(response => response.text())
       .then(text => text.replace(/\r/g, "").split("\n"))
       .then(array => {
         array.shift()
         array.pop()
-        dispatch(tLoad(array))
+        batch(() => {
+          dispatch({type: type, payload: array})
+          dispatch({type: "INTERSECTION"})
+        })
       }, (error) => {
         console.error(error)
       })

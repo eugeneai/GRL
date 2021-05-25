@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 
 export default function GeoJsonLayer({lineParameters}) {
   const features = useSelector(state => state.data.features)
-  const ids = useSelector(state => state.sparql.test)
+  const ids = useSelector(state => state.sparql.displayedData)
   
   return (    
     <FeatureGroup>

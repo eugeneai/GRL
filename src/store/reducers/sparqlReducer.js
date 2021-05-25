@@ -5,28 +5,27 @@ const initState = {
     dataByHistoricAge: [],
     dataByKinematicType: []
   }
-  
 }
 
 const sparqlReducer = (state = initState, action) => {
   switch (action.type) {
     
     case "LOAD_DATA_BY_SEISMIC":
-      return {...state, sortedData: { ...this.state.sortedData, dataBySeismic: action.payload}}
+      return {...state, sortedData: { ...state.sortedData, dataBySeismic: [...action.payload] } }
 
     case "LOAD_DATA_BY_HISTORIC_AGE":
-      return {...state, sortedData: { ...this.state.sortedData, dataByHistoricAge: action.payload}}
+      return {...state, sortedData: { ...state.sortedData, dataByHistoricAge: [...action.payload] } }
 
     case "LOAD_DATA_BY_KINEMATIC_TYPE":
-      return {...state, sortedData: { ...this.state.sortedData, dataByKinematicType: action.payload}}
+      return {...state, sortedData: { ...state.sortedData, dataByKinematicType: [...action.payload] } }
     
     // Пересечение множеств
     case "INTERSECTION": {
       
       let filters = []
       for (let dataByOption in state.sortedData) {
-        if (dataByOption.length > 0) {
-          filters.push(dataByOption)
+        if (state.sortedData[dataByOption].length > 0) {
+          filters.push(state.sortedData[dataByOption])
         }
       }
       
@@ -37,10 +36,11 @@ const sparqlReducer = (state = initState, action) => {
         return {...state, displayedData: filters[0]}
       }
 
-      let result = filters.shift()
-      for (const f in filters) {
-        result.filter(id => f.includes(id))
-      }
+
+      // data = [array1, array2, array3, array4]
+      // result = data.reduce((a, b) => a.filter(c => b.includes(c)));
+      
+      const result = filters.reduce((a, b) => a.filter(c => b.includes(c)))
       
       return {...state, displayedData: result}
     }
@@ -53,7 +53,5 @@ const sparqlReducer = (state = initState, action) => {
       return state
   }
 }
-
-export const tLoad = (payload) => ({type: "LOAD", payload})
 
 export default sparqlReducer

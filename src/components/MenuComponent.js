@@ -5,39 +5,28 @@ import CheckboxSlayder from './CheckboxSlayder/CheckboxSlayder'
 import { fetchSparql } from "../store/reducers/async/loadAllData";
 
 const seismicOptions = [
-  { value: "All", label: "Все" },
-  { value: "SeismicallyActiveFault", label: "Сейсмоактивные" },
+  { value: {type: "LOAD_DATA_BY_SEISMIC", option: "All"}, label: "Все" },
+  { value: {type: "LOAD_DATA_BY_SEISMIC", option: "SeismicallyActiveFault"}, label: "Сейсмоактивные" },
 ]
-
-const activityLevelOptions = [
-  { value: "All", label: "Все" },
-  { value: "1", label: "Аномально высокая" },
-  { value: "3", label: "Повышенная" },
-  { value: "2", label: "Высокая" },
-  { value: "4", label: "Средняя" },
-  { value: "5", label: "Слабая" },
-]
-
 const kinematicLevelOptions = [
-  { value: "All", label: "Все" },
-  { value: "NormalSlCB", label: "Сбросы" },
-  { value: "ShiftNormalCB", label: "Сдвиго-сбросы" },
-  { value: "UpLiftCB", label: "Взбросы" },
-  { value: "ShiftUpCB", label: "Сдвиго-взбросы" },
-  { value: "LeftSCB", label: "Левые сдвиги" },
-  { value: "LeftNSCB", label: "Левые сбросо-сдвиги" },
-  { value: "RightNSCB", label: "Правые сбросо-сдвиги" },
-  { value: "RightUSCB", label: "Правые взбросо-сдвиги" },
-  { value: "RightSCB", label: "Правые сдвиги" },
-  { value: "LeftUSCB", label: "Левые взбросо-сдвиги" },
+  { value: {type: "LOAD_DATA_BY_KINEMATIC_TYPE", option: "All"}, label: "Все" },
+  { value: {type: "LOAD_DATA_BY_KINEMATIC_TYPE", option: "NormalSlCB"}, label: "Сбросы" },
+  { value: {type: "LOAD_DATA_BY_KINEMATIC_TYPE", option: "ShiftNormalCB"}, label: "Сдвиго-сбросы" },
+  { value: {type: "LOAD_DATA_BY_KINEMATIC_TYPE", option: "UpLiftCB"}, label: "Взбросы" },
+  { value: {type: "LOAD_DATA_BY_KINEMATIC_TYPE", option: "ShiftUpCB"}, label: "Сдвиго-взбросы" },
+  { value: {type: "LOAD_DATA_BY_KINEMATIC_TYPE", option: "LeftSCB"}, label: "Левые сдвиги" },
+  { value: {type: "LOAD_DATA_BY_KINEMATIC_TYPE", option: "LeftNSCB"}, label: "Левые сбросо-сдвиги" },
+  { value: {type: "LOAD_DATA_BY_KINEMATIC_TYPE", option: "RightNSCB"}, label: "Правые сбросо-сдвиги" },
+  { value: {type: "LOAD_DATA_BY_KINEMATIC_TYPE", option: "RightUSCB"}, label: "Правые взбросо-сдвиги" },
+  { value: {type: "LOAD_DATA_BY_KINEMATIC_TYPE", option: "RightSCB"}, label: "Правые сдвиги" },
+  { value: {type: "LOAD_DATA_BY_KINEMATIC_TYPE", option: "LeftUSCB"}, label: "Левые взбросо-сдвиги" },
 ]
-
 const historicalAgeOptions = [
-  { value: "All", label: "Все" },
-  { value: "HistoricalFaultsID", label: "Исторический" },
-  { value: "HoloceneFaultsID", label: "Голоценовый" },
-  { value: "PleistoceneFaultsID", label: "Плейстоценовый" },
-  { value: "PlioceneFaultsID", label: "Плиоценовый" },
+  { value: {type: "LOAD_DATA_BY_HISTORIC_AGE", option: "All"}, label: "Все" },
+  { value: {type: "LOAD_DATA_BY_HISTORIC_AGE", option: "HistoricalFaultsID"}, label: "Исторический" },
+  { value: {type: "LOAD_DATA_BY_HISTORIC_AGE", option: "HoloceneFaultsID"}, label: "Голоценовый" },
+  { value: {type: "LOAD_DATA_BY_HISTORIC_AGE", option: "PleistoceneFaultsID"}, label: "Плейстоценовый" },
+  { value: {type: "LOAD_DATA_BY_HISTORIC_AGE", option: "PlioceneFaultsID"}, label: "Плиоценовый" },
 ]
 
 export default function MenuComponent() {
@@ -48,10 +37,6 @@ export default function MenuComponent() {
   }
   
   const chooseOption = (event) => {
-    if (event.value === "All") {
-      dispatch({type: "CLEAR"})
-      return
-    } 
     dispatch(fetchSparql(event.value))  
   }
   
@@ -61,13 +46,6 @@ export default function MenuComponent() {
         <span className="label">Разломы</span>
         <CheckboxSlayder />
       </div>
-      {/*<div className="menu-box">*/}
-      {/*  <span className="label">Поиск</span>*/}
-      {/*  <div>*/}
-      {/*    <input className="search-input" type="text" placeholder="Введите название разлома"/>*/}
-      {/*    <button className="apply-btn">Найти</button>*/}
-      {/*  </div>*/}
-      {/*</div>*/}
       <div className="menu-box">
         <span className="label">Сейсмоактивность</span>
         <div className="select-box">
@@ -78,15 +56,6 @@ export default function MenuComponent() {
           />
         </div>
       </div>
-      {/*<div className="menu-box">*/}
-      {/*  <span className="label">Степень активности</span>*/}
-      {/*  <div className="select-box">*/}
-      {/*    <Select */}
-      {/*      options={activityLevelOptions} */}
-      {/*      defaultValue={activityLevelOptions[0]}*/}
-      {/*    />*/}
-      {/*  </div>*/}
-      {/*</div>*/}
       <div className="menu-box">
         <span className="label">Кинематические типы</span>
         <div className="select-box">
