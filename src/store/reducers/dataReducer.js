@@ -5,9 +5,7 @@ const initState = {
 const dataReducer = (state = initState, action) => {
   switch (action.type) {
     case "LOAD_ALL_DATA":
-      return { ...state, features: [...state.features, ...action.payload]}
-    case "ADD_DATA":
-      return { ...state, features: [...state.features, action.payload]}
+      return { ...state, features: [...action.payload]}
     default:
       return state 
   }

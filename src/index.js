@@ -6,13 +6,12 @@ import { Provider } from 'react-redux'
 import './index.css';
 import '../node_modules/@fortawesome/fontawesome-free/css/all.css'
 import store from './store'
-import App from './App';
-
+import RouterWrapper from "./RouterWrapper";
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <RouterWrapper />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
