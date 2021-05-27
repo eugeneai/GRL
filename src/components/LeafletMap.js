@@ -6,7 +6,7 @@ import './map.css'
 import ListBaseMaps from './ListBaseMaps'
 import GeoJsonLayer from './GeoJsonLayer'
 
-export default function LeafletMap() {
+export default function MapComponent() {
   
   const dispatch = useDispatch()
   const position = [53.105, 107.405]
@@ -14,7 +14,6 @@ export default function LeafletMap() {
   const lineParameters = useSelector(state => state.interface.lineParameters)
 
   useEffect(() => {
-    console.log("LeafletMap", {...lineParameters})
     dispatch({type: "TOOGLE_VISIBLE"})
     setTimeout(() => dispatch({type: "TOOGLE_VISIBLE"}), 25)
   }, [lineParameters, dispatch])

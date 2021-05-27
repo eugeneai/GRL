@@ -36,6 +36,11 @@ export default function MenuComponent() {
     dispatch({type: "CHANGE_WEIGHT", payload: Number(event.target.value) })
   }
   
+  const changeColorLine = (event) => {
+    
+    dispatch({type: "CHANGE_COLOR", payload: event.target.value })
+  }
+  
   const chooseOption = (event) => {
     dispatch(fetchSparql(event.value))  
   }
@@ -77,7 +82,12 @@ export default function MenuComponent() {
         </div>
       </div>
       <div className="menu-box">
-        <input type="range" min="1" max="8" defaultValue="1" onInput={changeWidthLine}/> 
+        <span className="label">Толщина линии</span>
+        <input type="range" min="1" max="8" defaultValue="1" onChange={changeWidthLine}/>
+      </div>
+      <div className="menu-box">
+        <span className="label">Цвет линии</span>
+        <input type="color" defaultValue="#AD4725" onChange={changeColorLine}/>
       </div>
     </div>
   )

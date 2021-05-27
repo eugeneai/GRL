@@ -2,7 +2,10 @@ import React from 'react';
 import { GeoJSON, FeatureGroup, Popup } from 'react-leaflet';
 import { useSelector } from 'react-redux'
 
+import BtnGetInfo from "./BtnGetInfo";
+
 export default function GeoJsonLayer({lineParameters}) {
+  
   const features = useSelector(state => state.data.features)
   const ids = useSelector(state => state.sparql.displayedData)
   
@@ -17,7 +20,10 @@ export default function GeoJsonLayer({lineParameters}) {
                 data={f}
                 style={lineParameters}
               >
-                <Popup>{f.properties.Name}</Popup>
+                <Popup>
+                  <h3>{f.properties.Name}</h3>
+                  <BtnGetInfo id={f.properties.ID}/>
+                </Popup>
               </GeoJSON>
             )
           })
@@ -32,7 +38,10 @@ export default function GeoJsonLayer({lineParameters}) {
                 data={f}
                 style={lineParameters}
               >
-                <Popup>{f.properties.Name}</Popup>
+                <Popup>
+                  <h3>{f.properties.Name}</h3>
+                  <BtnGetInfo id={f.properties.ID}/>
+                </Popup>
               </GeoJSON>
             )
           })

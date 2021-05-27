@@ -76,7 +76,7 @@
   position: relative;
   height: 40px;
   width: 220px;
-  z-index: 100;
+  z-index: 1;
 }
 .select-box:before {
   content: '\f103';
@@ -127,7 +127,7 @@
 
 .leaflet-container {
   height: calc(95vh - 75px);
-  width: calc(100% - 4px);
+  width: calc(100% - 406px);
   border: 2px solid #ccc;
   border-radius: 2px;
   z-index: 0;
@@ -143,4 +143,16 @@
   font-size: 14px;
   padding: 4px;
   border-radius: 3px;
+}
+
+.flexWrapper {
+  display: flex;
+}
+
+.InfoComponent {
+  width: 400px;
+  height: calc(95vh - 75px);
+  margin-left: 2px;
+  border: 2px solid #ccc;
+  border-radius: 2px;
 }
