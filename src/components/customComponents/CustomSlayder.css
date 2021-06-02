@@ -18,14 +18,9 @@
   display: block;
   width: 80px;
   height: 40px;
-  /*background: #fff;*/
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
               0 -4px 8px 0 rgba(0, 0, 0, 0.2);
-  /*background: rgb(226, 226, 226);*/
   border-radius: 40px;
-  /*border: 2px solid #898B8D;*/
-  /*box-shadow: inset 0 2px 5px #ccc,*/
-  /*            inset 0 -1px 1px #ccc;*/
 }
 
 .white-slaider-checkbox .indicator {
@@ -34,10 +29,7 @@
   left: 0;
   width: 40px;
   height: 40px;
-  /*background: linear-gradient(to bottom, rgb(250, 250, 250), rgb(200, 200, 200));*/
   border-radius: 50%;
-  /*box-shadow: 0 2px 2px rgba(0,0,0,0.5),*/
-  /*            inset 0 1px 1px rgba(255,255,255,0.1);*/
   transition: 0.5s;
   transform: scale(0.9);
 }
@@ -55,16 +47,11 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  /*border: 2px solid #898B8D;*/
   background-color: rgb(241, 114, 114);
-  /*box-shadow: 0 0px 5px rgb(241, 114, 114),*/
-  /*            0 0px 15px rgb(241, 114, 114);*/
   transition: 0.5s;
 }
 
 .white-slaider-checkbox input:checked ~ .indicator::before {
   background-color: #038C73;
-  /*box-shadow: 0 0px 5px #038C73,*/
-  /*            0 0px 15px #038C73;*/
   transition: 0.5s;
 }

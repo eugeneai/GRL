@@ -3,10 +3,14 @@ import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux'
 
-import './index.css';
+import './index.scss';
 import '../node_modules/@fortawesome/fontawesome-free/css/all.css'
+import "../node_modules/bootstrap/scss/bootstrap.scss";
 import store from './store'
 import RouterWrapper from "./RouterWrapper";
+
+import L from "leaflet";
+L.Icon.Default.imagePath = "https://unpkg.com/leaflet@1.7.1/dist/images/";
 
 ReactDOM.render(
   <React.StrictMode>

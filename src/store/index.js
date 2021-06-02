@@ -5,13 +5,15 @@ import thunk from 'redux-thunk'
 import interfaceReducer from './reducers/interfaceReducer'
 import dataReducer from './reducers/dataReducer'
 import sparqlReducer from "./reducers/sparqlReducer";
+import newReducer from "./reducers/newReducer";
 
 
 const store = createStore( 
   combineReducers({ 
       interface: interfaceReducer,
       data: dataReducer,
-      sparql: sparqlReducer
+      sparql: sparqlReducer,
+      newr: newReducer
   }),
   composeWithDevTools(applyMiddleware(thunk))
 )
