@@ -8,7 +8,6 @@ export default function CustomSlayder({isActive}) {
   
   const click = (event) => {
     dispatch({"type": "SET_ACTIVE_LAYER"})
-    console.log(event.target.checked)
   }
 
   return (

@@ -7,7 +7,7 @@ export default function CustomSelectColor() {
   const colors = ["#F36161", "#F3A761", "#F3DC61", "#008000", "#6EBDB8", "#4469C7", "#9292F6", ]
   
   const activeTab = useSelector(state => state.newr.activeTab)
-  const selectedColor = useSelector(state => state.newr.options[activeTab].color)
+  const selectedColor = useSelector(state => state.newr.tabs[activeTab].color)
   const dispatch = useDispatch()
   
   const setSelectedColor = (color) => {

@@ -9,7 +9,7 @@ import CustomSlayder from "../customComponents/CustomSlayder";
 
 export default function LeftBar() {
 
-  const options = useSelector(state => state.newr.options)
+  const tabs = useSelector(state => state.newr.tabs)
   const activeTab = useSelector(state => state.newr.activeTab)
   
   
@@ -18,7 +18,7 @@ export default function LeftBar() {
       <div className="element">
         <label>Видимость</label>
         <CustomSlayder
-          isActive={options[activeTab].visible}
+          isActive={tabs[activeTab].visible}
         />
       </div>
       <div className="element">
@@ -26,7 +26,8 @@ export default function LeftBar() {
         <CustomSelect
           type={"SET_SEISMIC"}  
           options={seismicOptions}
-          value={options[activeTab].seismic}
+          param={"seismicOption"}
+          value={tabs[activeTab].seismic}
         />
       </div>
       <div className="element">
@@ -34,7 +35,8 @@ export default function LeftBar() {
         <CustomSelect
           type={"SET_KINEMATIC"}  
           options={kinematicLevelOptions}
-          value={options[activeTab].kinematic}
+          param={"kinematicLevelOption"}
+          value={tabs[activeTab].kinematic}
         />
       </div>
       <div className="element">
@@ -42,13 +44,14 @@ export default function LeftBar() {
         <CustomSelect 
           type={"SET_AGE"}
           options={historicalAgeOptions}
-          value={options[activeTab].age}
+          param={"historicalAgeOption"}
+          value={tabs[activeTab].age}
         />
       </div>
       <div className="element">
         <label>Толщина</label>
         <CustomRange 
-          width={options[activeTab].lineWidth}
+          width={tabs[activeTab].lineWidth}
         />
       </div>
       <div className="element">

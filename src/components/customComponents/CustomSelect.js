@@ -1,10 +1,15 @@
 import React from "react";
 import Select from "react-select";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {fetchIdsBy} from "../../store/reducers/async/middleware";
 
-export default function CustomSelect({options, value, type}) {
+export default function CustomSelect({param, options, value, type}) {
   
   const dispatch = useDispatch()
+  const activeTab = useSelector(state => state.newr.activeTab)
+  const seismicOption = useSelector(state => state.newr.tabs[activeTab].seismic)
+  const kinematicLevelOption = useSelector(state => state.newr.tabs[activeTab].kinematic)
+  const historicalAgeOption = useSelector(state => state.newr.tabs[activeTab].age)
 
   const selectStyles = {
     control: (styles, {isFocused}) => ({
@@ -31,7 +36,14 @@ export default function CustomSelect({options, value, type}) {
   }
   
   const change = (event) => {
-    dispatch({type, payload: event})
+    const action = {type, payload: event}
+    const ops = {
+      seismicOption: seismicOption.value,
+      kinematicLevelOption: kinematicLevelOption.value,
+      historicalAgeOption: historicalAgeOption.value,
+    }
+    ops[param] = event.value
+    dispatch(fetchIdsBy(activeTab, ops, action))
   }
   
   return(

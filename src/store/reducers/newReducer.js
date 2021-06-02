@@ -6,28 +6,18 @@ const initState = {
   activeTab: 0,
   tabs: [
     {
-      id: 0,
-      color: "#F36161",
-      name: "г1"
-    },
-    {
-      id: 1,
-      color: "#9292F6",
-      name: "г2"
-    }
-  ],
-  options: [
-    {
-      visible: true,
+      name: "г1",
+      visible: false,
       id: 0,
       lineWidth: 1,
       age: historicalAgeOptions[0],
       kinematic: kinematicLevelOptions[0],
       seismic: seismicOptions[0],
       color: "#F36161",
-      ids: []
+      data: [],
     },
     {
+      name: "г2",
       visible: false,
       id: 1,
       lineWidth: 5,
@@ -35,10 +25,9 @@ const initState = {
       kinematic: kinematicLevelOptions[0],
       seismic: seismicOptions[0],
       color: "#9292F6",
-      ids: [],
+      data: [],
     },
-  ],
-  rightBar: {}
+  ]
 }
 
 const newReducer = (state = initState, action) => {
@@ -46,18 +35,34 @@ const newReducer = (state = initState, action) => {
 
     case "SET_ACTIVE_TAB": return {...state, activeTab: action.payload}
     
+    case "SET_TAB_DATA": 
+      const {newdata, tabId} = action.payload
+      return {
+        ...state,
+        // eslint-disable-next-line array-callback-return
+        tabs: state.tabs.map(tab => {
+          if (tab.id === tabId) {
+            return {
+              ...tab,
+              data: newdata
+            }
+          }
+          return tab
+        })
+      }
+      
     case "SET_LINE_WIDTH":
       return {
         ...state,
         // eslint-disable-next-line array-callback-return
-        options: state.options.map(ops => {
-          if(ops.id === state.activeTab) {
+        tabs: state.tabs.map(tab => {
+          if(tab.id === state.activeTab) {
             return {
-              ...ops,
+              ...tab,
               lineWidth: action.payload
             }
           } 
-          return ops
+          return tab
         })
       }
       
@@ -65,14 +70,14 @@ const newReducer = (state = initState, action) => {
       return {
         ...state,
         // eslint-disable-next-line array-callback-return
-        options: state.options.map(ops => {
-          if(ops.id === state.activeTab) {
+        tabs: state.tabs.map(tab => {
+          if(tab.id === state.activeTab) {
             return {
-              ...ops,
-              visible: !ops.visible
+              ...tab,
+              visible: !tab.visible
             }
           }
-          return ops
+          return tab
         })
       }
     
@@ -80,14 +85,14 @@ const newReducer = (state = initState, action) => {
       return {
         ...state,
         // eslint-disable-next-line array-callback-return
-        options: state.options.map(ops => {
-          if(ops.id === state.activeTab) {
+        tabs: state.tabs.map(tab => {
+          if(tab.id === state.activeTab) {
             return {
-              ...ops,
+              ...tab,
               seismic: action.payload
             }
           }
-          return ops
+          return tab
         })
       }
 
@@ -95,14 +100,14 @@ const newReducer = (state = initState, action) => {
       return {
         ...state,
         // eslint-disable-next-line array-callback-return
-        options: state.options.map(ops => {
-          if(ops.id === state.activeTab) {
+        tabs: state.tabs.map(tab => {
+          if(tab.id === state.activeTab) {
             return {
-              ...ops,
+              ...tab,
               kinematic: action.payload
             }
           }
-          return ops
+          return tab
         })
       }    
 
@@ -110,14 +115,14 @@ const newReducer = (state = initState, action) => {
       return {
         ...state,
         // eslint-disable-next-line array-callback-return
-        options: state.options.map(ops => {
-          if(ops.id === state.activeTab) {
+        tabs: state.tabs.map(tab => {
+          if(tab.id === state.activeTab) {
             return {
-              ...ops,
+              ...tab,
               age: action.payload
             }
           }
-          return ops
+          return tab
         })
       }  
     
@@ -132,15 +137,6 @@ const newReducer = (state = initState, action) => {
             }
           }
           return tab
-        }),
-        options: state.options.map(ops => {
-          if(ops.id === state.activeTab) {
-            return {
-              ...ops,
-              color: action.payload
-            }
-          }
-          return ops
         })
       }
     
