@@ -12,6 +12,8 @@ export default function CustomSelectColor() {
   
   const setSelectedColor = (color) => {
     dispatch({type: "SET_COLOR_FOR_ACTIVE_LAYER", payload: color})
+    dispatch({type: "TOGGLE_ACTIVE_TAB"})
+    setTimeout(() => dispatch({type: "TOGGLE_ACTIVE_TAB"}), 10)
   }
   
   const nonActive = {

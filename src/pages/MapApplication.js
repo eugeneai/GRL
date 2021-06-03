@@ -13,10 +13,10 @@ export default function MapApplication() {
 
   const countTab = useSelector(state => state.newr.countTabs)
   useEffect(() => {
+    dispatch(fetchFeatures())
     for(let i=0; i<countTab; i++) {
       dispatch(fetchAllIds(i))
     }
-    dispatch(fetchFeatures())
   })
   
   return (

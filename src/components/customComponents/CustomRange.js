@@ -13,6 +13,8 @@ class CustomRange extends React.Component {
   };
   change() {
     this.props.dispatch({type: "SET_LINE_WIDTH", payload: this.state.values[0]})
+    this.props.dispatch({type: "TOGGLE_ACTIVE_TAB"})
+    setTimeout(() => this.props.dispatch({type: "TOGGLE_ACTIVE_TAB"}), 10)
   }
   
   render() {

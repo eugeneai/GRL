@@ -35,6 +35,20 @@ const newReducer = (state = initState, action) => {
 
     case "SET_ACTIVE_TAB": return {...state, activeTab: action.payload}
     
+    case "TOGGLE_ACTIVE_TAB": 
+      return {
+        ...state,
+        tabs: state.tabs.map(tab => {
+          if (tab.id === state.activeTab) {
+            return {
+              ...tab,
+              visible: !tab.visible
+            }
+          }
+          return tab
+        })
+      }
+    
     case "SET_TAB_DATA": 
       const {newdata, tabId} = action.payload
       return {
