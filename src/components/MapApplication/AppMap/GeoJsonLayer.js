@@ -3,7 +3,7 @@ import {GeoJSON, FeatureGroup, Popup} from 'react-leaflet';
 import { useSelector } from 'react-redux'
 import CustomBtnInfo from "../../CustomBtnInfo";
 
-export default function GeoJsonLayer2({tabId}) {
+export default function GeoJsonLayer({tabId}) {
 
   const features = useSelector(state => state.data.features)
   const tab = useSelector(state => state.newr.tabs[tabId])

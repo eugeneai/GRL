@@ -1,8 +1,8 @@
 import React from "react";
 import {MapContainer, ZoomControl} from "react-leaflet";
 import "./AppMap.css";
-import ListBaseMaps2 from "./ListBaseMaps2";
-import GeoJsonLayer2 from "./GeoJsonLayer2";
+import ListBaseMaps from "./ListBaseMaps";
+import GeoJsonLayer2 from "./GeoJsonLayer";
 import {useSelector} from "react-redux";
 
 
@@ -13,7 +13,7 @@ export default function AppMap() {
   
   return (
     <MapContainer className="map" center={position} zoom={7} zoomControl={false}>
-      <ListBaseMaps2 />
+      <ListBaseMaps />
       <ZoomControl position="bottomleft" />
       
       {/* eslint-disable-next-line array-callback-return */}

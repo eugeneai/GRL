@@ -2,14 +2,14 @@ import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import thunk from 'redux-thunk'
 
-import dataReducer from './reducers/dataReducer'
-import newReducer from "./reducers/newReducer";
+import geoJsonReducer from './reducers/geoJsonReducer'
+import reducer from "./reducers/reducer";
 
 
 const store = createStore( 
   combineReducers({
-      data: dataReducer,
-      newr: newReducer
+      data: geoJsonReducer,
+      newr: reducer
   }),
   composeWithDevTools(applyMiddleware(thunk))
 )

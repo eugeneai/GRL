@@ -3,7 +3,7 @@ import { LayersControl, TileLayer } from 'react-leaflet'
 
 const { BaseLayer } = LayersControl
 
-export default function ListBaseMaps2 () {
+export default function ListBaseMaps () {
   return (
     <LayersControl position="bottomleft">
       <BaseLayer name="osm" checked>

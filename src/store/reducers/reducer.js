@@ -30,7 +30,7 @@ const initState = {
   ]
 }
 
-const newReducer = (state = initState, action) => {
+const reducer = (state = initState, action) => {
   switch (action.type) {
 
     case "SET_ACTIVE_TAB": return {...state, activeTab: action.payload}
@@ -159,4 +159,4 @@ const newReducer = (state = initState, action) => {
   }
 }
 
-export default newReducer
+export default reducer
