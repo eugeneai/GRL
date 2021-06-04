@@ -4,8 +4,7 @@ import LeftBar from "../components/MapApplication/LeftBar";
 import RightBar from "../components/MapApplication/RightBar";
 import AppMap from "../components/MapApplication/AppMap/AppMap";
 import {useDispatch, useSelector} from "react-redux";
-import {fetchAllIds} from "../store/reducers/async/middleware";
-import {fetchFeatures} from "../store/reducers/async/loadAllData";
+import {fetchAllIds, fetchFeatures} from "../store/reducers/async/middleware";
 
 export default function MapApplication() {
   
