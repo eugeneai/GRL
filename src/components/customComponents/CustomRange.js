@@ -10,11 +10,12 @@ class CustomRange extends React.Component {
   
   state = {
     values: [this.props.width]
-  };
-  change() {
-    this.props.dispatch({type: "SET_LINE_WIDTH", payload: this.state.values[0]})
-    this.props.dispatch({type: "TOGGLE_ACTIVE_TAB"})
-    setTimeout(() => this.props.dispatch({type: "TOGGLE_ACTIVE_TAB"}), 10)
+  }
+  
+  async change() {
+    await this.props.dispatch({type: "TOGGLE_ACTIVE_TAB"})
+    await this.props.dispatch({type: "SET_LINE_WIDTH", payload: this.state.values[0]})
+    await this.props.dispatch({type: "TOGGLE_ACTIVE_TAB"})
   }
   
   render() {
@@ -90,4 +91,4 @@ class CustomRange extends React.Component {
     );
   }
 }
-export default connect()(CustomRange);
+export default connect()(CustomRange)
