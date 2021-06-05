@@ -1,16 +1,22 @@
-import React from 'react'
-// import {fetchInfoByID} from "../store/reducers/async/loadAllData";
-// import {useDispatch} from "react-redux";
+import React from 'react';
+import {fetchInfoByID} from "../../store/reducers/async/middleware";
+import {useDispatch} from "react-redux";
 
 export default function CustomBtnInfo({id}) {
 
-  // const dispatch = useDispatch()
+  const dispatch = useDispatch()
 
   const getInfo = () => {
-    // dispatch(fetchInfoByID(id))
+    dispatch(fetchInfoByID(id))
   }
 
   return (
-    <button type="button" className="btn btn-outline-dark" onClick={getInfo}>Подробнее</button>
+    <button 
+      type="button" 
+      className="btn btn-outline-dark" 
+      onClick={getInfo}
+    >
+      Подробнее
+    </button>
   )
 } 
