@@ -27,7 +27,8 @@ const initState = {
       color: "#9292F6",
       data: [],
     },
-  ]
+  ],
+  info: [],
 }
 
 const reducer = (state = initState, action) => {
@@ -153,6 +154,8 @@ const reducer = (state = initState, action) => {
           return tab
         })
       }
+      
+    case "SET_INFO_BY_ID": return { ...state, info: action.payload}
     
     default:
       return state
