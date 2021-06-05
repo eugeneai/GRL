@@ -1,19 +1,21 @@
 import React from 'react'
 import Circle from "../svgComponents/circle";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 
-export default function CustomSelectColor() {
+export default function CustomSelectColor({isUse, value}) {
 
   const colors = ["#F36161", "#F3A761", "#F3DC61", "#008000", "#6EBDB8", "#4469C7", "#9292F6", ]
   
-  const activeTab = useSelector(state => state.newr.activeTab)
-  const selectedColor = useSelector(state => state.newr.tabs[activeTab].color)
   const dispatch = useDispatch()
   
   const setSelectedColor = async (color) => {
-    await dispatch({type: "TOGGLE_ACTIVE_TAB"})
-    await dispatch({type: "SET_COLOR_FOR_ACTIVE_LAYER", payload: color})
-    await dispatch({type: "TOGGLE_ACTIVE_TAB"})
+    if (isUse) {
+      await dispatch({type: "TOGGLE_ACTIVE_TAB"})
+      await dispatch({type: "SET_COLOR_FOR_ACTIVE_LAYER", payload: color})
+      await dispatch({type: "TOGGLE_ACTIVE_TAB"})
+    } else {
+      await dispatch({type: "SET_COLOR_FOR_ACTIVE_LAYER", payload: color})
+    }
   }
   
   const nonActive = {
@@ -30,7 +32,7 @@ export default function CustomSelectColor() {
   return (
     <div className="ColorBox" >
       { colors.map( (color, key) => {
-        if (color === selectedColor) {
+        if (color === value) {
           return <span key={key} onClick={() => setSelectedColor(color)}><Circle fillColor={color} {...Active} /></span>
         } else {
           return <span key={key} onClick={() => setSelectedColor(color)}><Circle fillColor={color} {...nonActive} /></span>
