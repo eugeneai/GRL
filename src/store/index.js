@@ -2,16 +2,14 @@ import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import thunk from 'redux-thunk'
 
-import interfaceReducer from './reducers/interfaceReducer'
-import dataReducer from './reducers/dataReducer'
-import sparqlReducer from "./reducers/sparqlReducer";
+import geoJsonReducer from './reducers/geoJsonReducer'
+import reducer from "./reducers/reducer";
 
 
 const store = createStore( 
-  combineReducers({ 
-      interface: interfaceReducer,
-      data: dataReducer,
-      sparql: sparqlReducer
+  combineReducers({
+      data: geoJsonReducer,
+      newr: reducer
   }),
   composeWithDevTools(applyMiddleware(thunk))
 )

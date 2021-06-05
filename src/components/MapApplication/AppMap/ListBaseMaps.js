@@ -5,7 +5,7 @@ const { BaseLayer } = LayersControl
 
 export default function ListBaseMaps () {
   return (
-    <LayersControl>
+    <LayersControl position="bottomleft">
       <BaseLayer name="osm" checked>
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
