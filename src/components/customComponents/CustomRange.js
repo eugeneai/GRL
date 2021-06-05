@@ -13,9 +13,13 @@ class CustomRange extends React.Component {
   }
   
   async change() {
-    await this.props.dispatch({type: "TOGGLE_ACTIVE_TAB"})
-    await this.props.dispatch({type: "SET_LINE_WIDTH", payload: this.state.values[0]})
-    await this.props.dispatch({type: "TOGGLE_ACTIVE_TAB"})
+    if (this.props.isUse) {
+      await this.props.dispatch({type: "TOGGLE_ACTIVE_TAB"})
+      await this.props.dispatch({type: "SET_LINE_WIDTH", payload: this.state.values[0]})
+      await this.props.dispatch({type: "TOGGLE_ACTIVE_TAB"})
+    } else {
+      await this.props.dispatch({type: "SET_LINE_WIDTH", payload: this.state.values[0]})
+    }
   }
   
   render() {
