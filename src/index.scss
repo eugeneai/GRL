@@ -138,17 +138,49 @@
 // RightBAR
 
 .right-bar {
-  visibility: hidden;
+  //visibility: hidden;
   z-index: 1;
   position: absolute;
   top: 0;
   right: 0;
   width: 400px;
-  height: 880px;
+  max-height: 880px;
+  padding: 60px 15px 20px;
   background-color: #f2f2f2;
   box-shadow: -4px 8px 8px rgba(0, 0, 0, 0.25);
   border-bottom-left-radius: 30px;
   display: flex;
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .property {
+    //background-color: #fff;
+    padding: 3px;
+    margin: 4px 0;
+    display: flex;
+    width: 360px;
+    
+    &__name {
+      display: inline-block;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 18px;
+      color: #888;
+      padding-bottom: 5px;
+      width: 150px;
+      padding-right: 10px;
+    }
+    
+    &__value {
+      display: inline-block;
+      width: 200px;
+    }
+  }
 }
 
 
