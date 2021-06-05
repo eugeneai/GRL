@@ -2,7 +2,7 @@ import React from "react";
 import {MapContainer, ZoomControl} from "react-leaflet";
 import "./AppMap.css";
 import ListBaseMaps from "./ListBaseMaps";
-import GeoJsonLayer2 from "./GeoJsonLayer";
+import GeoJsonLayer from "./GeoJsonLayer";
 import {useSelector} from "react-redux";
 
 
@@ -19,7 +19,7 @@ export default function AppMap() {
       {/* eslint-disable-next-line array-callback-return */}
       {visibles.map( (v, id) => {
         if(v){
-          return <GeoJsonLayer2 tabId={id} key={id}/>
+          return <GeoJsonLayer tabId={id} key={id}/>
         }
       })}
       

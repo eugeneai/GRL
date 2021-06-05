@@ -1,7 +1,7 @@
 import React from 'react';
 import {GeoJSON, FeatureGroup, Popup} from 'react-leaflet';
 import { useSelector } from 'react-redux'
-import CustomBtnInfo from "../../CustomBtnInfo";
+import CustomBtnInfo from "../../customComponents/CustomBtnInfo";
 
 export default function GeoJsonLayer({tabId}) {
 
@@ -26,7 +26,7 @@ export default function GeoJsonLayer({tabId}) {
               style={style}
             >
               <Popup>
-                <h3>{f.properties.Name}</h3>
+                <h5>{f.properties.Name}</h5>
                 <CustomBtnInfo id={f.properties.ID}/>
               </Popup>
             </GeoJSON>
