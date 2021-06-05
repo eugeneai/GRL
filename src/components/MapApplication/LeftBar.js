@@ -12,7 +12,6 @@ export default function LeftBar() {
   const tabs = useSelector(state => state.newr.tabs)
   const activeTab = useSelector(state => state.newr.activeTab)
   
-  
   return (
     <div className="left-bar">
       <div className="element">
@@ -52,11 +51,15 @@ export default function LeftBar() {
         <label>Толщина</label>
         <CustomRange 
           width={tabs[activeTab].lineWidth}
+          isUse={tabs[activeTab].visible}
         />
       </div>
       <div className="element">
         <label>Цвет</label>
-        <CustomSelectColor />
+        <CustomSelectColor
+          isUse={tabs[activeTab].visible}
+          value={tabs[activeTab].color}
+        />
       </div>
     </div>
   )
