@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect} from 'react';
 import TopBar from "../components/MapApplication/TopBar";
 import LeftBar from "../components/MapApplication/LeftBar";
 import RightBar from "../components/MapApplication/RightBar";
@@ -7,17 +7,17 @@ import {useDispatch, useSelector} from "react-redux";
 import {fetchAllIds, fetchFeatures} from "../store/reducers/async/middleware";
 
 export default function MapApplication() {
-  
-  const dispatch = useDispatch()
 
-  const countTab = useSelector(state => state.newr.countTabs)
+  const dispatch = useDispatch();
+
+  const countTab = useSelector(state => state.newr.countTabs);
   useEffect(() => {
-    dispatch(fetchFeatures())
+    dispatch(fetchFeatures());
     for(let i=0; i<countTab; i++) {
-      dispatch(fetchAllIds(i))
+      dispatch(fetchAllIds(i));
     }
-  })
-  
+  });
+
   return (
       <div className="interface-wrapper">
         <TopBar />
@@ -27,4 +27,3 @@ export default function MapApplication() {
       </div>
   );
 }
-

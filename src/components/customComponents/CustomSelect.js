@@ -4,12 +4,12 @@ import {useDispatch, useSelector} from "react-redux";
 import {fetchIdsBy} from "../../store/reducers/async/middleware";
 
 export default function CustomSelect({param, options, value, type}) {
-  
-  const dispatch = useDispatch()
-  const activeTab = useSelector(state => state.newr.activeTab)
-  const seismicOption = useSelector(state => state.newr.tabs[activeTab].seismic)
-  const kinematicLevelOption = useSelector(state => state.newr.tabs[activeTab].kinematic)
-  const historicalAgeOption = useSelector(state => state.newr.tabs[activeTab].age)
+
+  const dispatch = useDispatch();
+  const activeTab = useSelector(state => state.newr.activeTab);
+  const seismicOption = useSelector(state => state.newr.tabs[activeTab].seismic);
+  const kinematicLevelOption = useSelector(state => state.newr.tabs[activeTab].kinematic);
+  const historicalAgeOption = useSelector(state => state.newr.tabs[activeTab].age);
 
   const selectStyles = {
     control: (styles, {isFocused}) => ({
@@ -33,20 +33,20 @@ export default function CustomSelect({param, options, value, type}) {
         color: isSelected ? "#fff" : "#000",
       }
     })
-  }
-  
+  };
+
   const change = (event) => {
-    const action = {type, payload: event}
+    const action = {type, payload: event};
     const ops = {
       seismicOption: seismicOption.value,
       kinematicLevelOption: kinematicLevelOption.value,
       historicalAgeOption: historicalAgeOption.value,
-    }
-    ops[param] = event.value
-    dispatch(fetchIdsBy(activeTab, ops, action))
-  }
-  
+    };
+    ops[param] = event.value;
+    dispatch(fetchIdsBy(activeTab, ops, action));
+  };
+
   return(
     <Select options={options} styles={selectStyles} value={value} onChange={change} />
-  )
+  );
 }

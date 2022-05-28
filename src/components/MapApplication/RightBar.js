@@ -2,10 +2,10 @@ import React from "react";
 import {useSelector} from "react-redux";
 
 export default function RightBar() {
-  
-  const info = useSelector(state => state.newr.info)
-  console.log(info)
-  
+
+  const info = useSelector(state => state.newr.info);
+  console.log(info);
+
   return (
     <div className="right-bar">
       <ul>
@@ -15,9 +15,9 @@ export default function RightBar() {
             <span className="property__name">{property[0]}: </span>
             <span className="property__value">{property[1]}</span>
           </li>
-        )
+        );
       })}
       </ul>
     </div>
-  )
+  );
 }

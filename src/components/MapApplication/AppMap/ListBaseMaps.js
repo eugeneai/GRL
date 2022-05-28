@@ -1,7 +1,7 @@
-import React from 'react'
-import { LayersControl, TileLayer } from 'react-leaflet'
+import React from 'react';
+import { LayersControl, TileLayer } from 'react-leaflet';
 
-const { BaseLayer } = LayersControl
+const { BaseLayer } = LayersControl;
 
 export default function ListBaseMaps () {
   return (
@@ -63,6 +63,5 @@ export default function ListBaseMaps () {
         />
       </BaseLayer>
     </LayersControl>
-  )
+  );
 }
-  

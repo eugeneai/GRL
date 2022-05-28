@@ -1,7 +1,7 @@
 export const seismicOptions = [
   { value: "All", label: "Все" },
   { value: "SeismicallyActiveFault", label: "Сейсмоактивные" },
-]
+];
 export const kinematicLevelOptions = [
   { value:  "All", label: "Все" },
   { value:  "NormalSlCB", label: "Сбросы" },
@@ -14,11 +14,11 @@ export const kinematicLevelOptions = [
   { value:  "RightUSCB", label: "Правые взбросо-сдвиги" },
   { value:  "RightSCB", label: "Правые сдвиги" },
   { value:  "LeftUSCB", label: "Левые взбросо-сдвиги" },
-]
+];
 export const historicalAgeOptions = [
   { value: "All", label: "Все" },
   { value: "HistoricalFault", label: "Исторический" },
   { value: "HoloceneFault", label: "Голоценовый" },
   { value: "PleistoceneFault", label: "Плейстоценовый" },
   { value: "PlioceneFault", label: "Плиоценовый" },
-]
+];

@@ -1,7 +1,7 @@
 import React from "react";
-import CustomRange from "../customComponents/CustomRange"
+import CustomRange from "../customComponents/CustomRange";
 import CustomSelect from "../customComponents/CustomSelect";
-import {seismicOptions, kinematicLevelOptions, historicalAgeOptions} from '../../store/staticData'
+import {seismicOptions, kinematicLevelOptions, historicalAgeOptions} from '../../store/staticData';
 import CustomSelectColor from "../customComponents/CustomSelectColor";
 import {useSelector} from "react-redux";
 import CustomSlayder from "../customComponents/CustomSlayder";
@@ -9,9 +9,9 @@ import CustomSlayder from "../customComponents/CustomSlayder";
 
 export default function LeftBar() {
 
-  const tabs = useSelector(state => state.newr.tabs)
-  const activeTab = useSelector(state => state.newr.activeTab)
-  
+  const tabs = useSelector(state => state.newr.tabs);
+  const activeTab = useSelector(state => state.newr.activeTab);
+
   return (
     <div className="left-bar">
       <div className="element">
@@ -23,7 +23,7 @@ export default function LeftBar() {
       <div className="element">
         <label>Сейсмоактивность</label>
         <CustomSelect
-          type={"SET_SEISMIC"}  
+          type={"SET_SEISMIC"}
           options={seismicOptions}
           param={"seismicOption"}
           value={tabs[activeTab].seismic}
@@ -32,7 +32,7 @@ export default function LeftBar() {
       <div className="element">
         <label>Кинематический тип</label>
         <CustomSelect
-          type={"SET_KINEMATIC"}  
+          type={"SET_KINEMATIC"}
           options={kinematicLevelOptions}
           param={"kinematicLevelOption"}
           value={tabs[activeTab].kinematic}
@@ -40,7 +40,7 @@ export default function LeftBar() {
       </div>
       <div className="element">
         <label>Возраст</label>
-        <CustomSelect 
+        <CustomSelect
           type={"SET_AGE"}
           options={historicalAgeOptions}
           param={"historicalAgeOption"}
@@ -49,7 +49,7 @@ export default function LeftBar() {
       </div>
       <div className="element">
         <label>Толщина</label>
-        <CustomRange 
+        <CustomRange
           width={tabs[activeTab].lineWidth}
           isUse={tabs[activeTab].visible}
         />
@@ -62,5 +62,5 @@ export default function LeftBar() {
         />
       </div>
     </div>
-  )
+  );
 }

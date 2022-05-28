@@ -1,16 +1,16 @@
 const initState = {
   features: []
-}
+};
 
 const geoJsonReducer = (state = initState, action) => {
   switch (action.type) {
     case "LOAD_ALL_DATA":
-      return { ...state, features: [...action.payload]}
+    return { ...state, features: [...action.payload]};
     default:
-      return state 
+    return state ;
   }
-}
+};
 
-export const load_all_data = (payload) => ({type: "LOAD_ALL_DATA", payload})
+export const load_all_data = (payload) => ({type: "LOAD_ALL_DATA", payload});
 
-export default geoJsonReducer
+export default geoJsonReducer;

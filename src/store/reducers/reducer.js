@@ -1,4 +1,4 @@
-import {historicalAgeOptions, kinematicLevelOptions, seismicOptions} from '../staticData'
+import {historicalAgeOptions, kinematicLevelOptions, seismicOptions} from '../staticData';
 
 
 const initState = {
@@ -29,137 +29,137 @@ const initState = {
     },
   ],
   info: [],
-}
+};
 
 const reducer = (state = initState, action) => {
   switch (action.type) {
 
-    case "SET_ACTIVE_TAB": return {...state, activeTab: action.payload}
-    
-    case "TOGGLE_ACTIVE_TAB": 
-      return {
-        ...state,
-        tabs: state.tabs.map(tab => {
-          if (tab.id === state.activeTab) {
-            return {
-              ...tab,
-              visible: !tab.visible
-            }
-          }
-          return tab
-        })
-      }
-    
-    case "SET_TAB_DATA": 
-      const {newdata, tabId} = action.payload
-      return {
-        ...state,
-        // eslint-disable-next-line array-callback-return
-        tabs: state.tabs.map(tab => {
-          if (tab.id === tabId) {
-            return {
-              ...tab,
-              data: newdata
-            }
-          }
-          return tab
-        })
-      }
-      
-    case "SET_LINE_WIDTH":
-      return {
-        ...state,
-        // eslint-disable-next-line array-callback-return
-        tabs: state.tabs.map(tab => {
-          if(tab.id === state.activeTab) {
-            return {
-              ...tab,
-              lineWidth: action.payload
-            }
-          } 
-          return tab
-        })
-      }
-      
-    case "SET_ACTIVE_LAYER":
-      return {
-        ...state,
-        // eslint-disable-next-line array-callback-return
-        tabs: state.tabs.map(tab => {
-          if(tab.id === state.activeTab) {
-            return {
-              ...tab,
-              visible: !tab.visible
-            }
-          }
-          return tab
-        })
-      }
-    
-    case "SET_SEISMIC":
-      return {
-        ...state,
-        // eslint-disable-next-line array-callback-return
-        tabs: state.tabs.map(tab => {
-          if(tab.id === state.activeTab) {
-            return {
-              ...tab,
-              seismic: action.payload
-            }
-          }
-          return tab
-        })
-      }
+  case "SET_ACTIVE_TAB": return {...state, activeTab: action.payload};
 
-    case "SET_KINEMATIC":
-      return {
-        ...state,
-        // eslint-disable-next-line array-callback-return
-        tabs: state.tabs.map(tab => {
-          if(tab.id === state.activeTab) {
-            return {
-              ...tab,
-              kinematic: action.payload
-            }
-          }
-          return tab
-        })
-      }    
+  case "TOGGLE_ACTIVE_TAB":
+    return {
+      ...state,
+      tabs: state.tabs.map(tab => {
+        if (tab.id === state.activeTab) {
+          return {
+            ...tab,
+            visible: !tab.visible
+          };
+        }
+        return tab;
+      })
+    };
 
-    case "SET_AGE":
-      return {
-        ...state,
-        // eslint-disable-next-line array-callback-return
-        tabs: state.tabs.map(tab => {
-          if(tab.id === state.activeTab) {
-            return {
-              ...tab,
-              age: action.payload
-            }
-          }
-          return tab
-        })
-      }  
-    
-    case "SET_COLOR_FOR_ACTIVE_LAYER":
-      return {
-        ...state,
-        tabs: state.tabs.map(tab => {
-          if(tab.id === state.activeTab) {
-            return {
-              ...tab,
-              color: action.payload
-            }
-          }
-          return tab
-        })
-      }
-      
-    case "SET_INFO_BY_ID": return { ...state, info: action.payload}
-    
-    default:
-      return state
+  case "SET_TAB_DATA":
+    const {newdata, tabId} = action.payload;
+    return {
+      ...state,
+      // eslint-disable-next-line array-callback-return
+      tabs: state.tabs.map(tab => {
+        if (tab.id === tabId) {
+          return {
+            ...tab,
+            data: newdata
+          };
+        }
+        return tab;
+      })
+    };
+
+  case "SET_LINE_WIDTH":
+    return {
+      ...state,
+      // eslint-disable-next-line array-callback-return
+      tabs: state.tabs.map(tab => {
+        if(tab.id === state.activeTab) {
+          return {
+            ...tab,
+            lineWidth: action.payload
+          };
+        }
+        return tab;
+      })
+    };
+
+  case "SET_ACTIVE_LAYER":
+    return {
+      ...state,
+      // eslint-disable-next-line array-callback-return
+      tabs: state.tabs.map(tab => {
+        if(tab.id === state.activeTab) {
+          return {
+            ...tab,
+            visible: !tab.visible
+          };
+        }
+        return tab;
+      })
+    };
+
+  case "SET_SEISMIC":
+    return {
+      ...state,
+      // eslint-disable-next-line array-callback-return
+      tabs: state.tabs.map(tab => {
+        if(tab.id === state.activeTab) {
+          return {
+            ...tab,
+            seismic: action.payload
+          };
+        }
+        return tab;
+      })
+    };
+
+  case "SET_KINEMATIC":
+    return {
+      ...state,
+      // eslint-disable-next-line array-callback-return
+      tabs: state.tabs.map(tab => {
+        if(tab.id === state.activeTab) {
+          return {
+            ...tab,
+            kinematic: action.payload
+          };
+        }
+        return tab;
+      })
+    };
+
+  case "SET_AGE":
+    return {
+      ...state,
+      // eslint-disable-next-line array-callback-return
+      tabs: state.tabs.map(tab => {
+        if(tab.id === state.activeTab) {
+          return {
+            ...tab,
+            age: action.payload
+          };
+        }
+        return tab;
+      })
+    };
+
+  case "SET_COLOR_FOR_ACTIVE_LAYER":
+    return {
+      ...state,
+      tabs: state.tabs.map(tab => {
+        if(tab.id === state.activeTab) {
+          return {
+            ...tab,
+            color: action.payload
+          };
+        }
+        return tab;
+      })
+    };
+
+  case "SET_INFO_BY_ID": return { ...state, info: action.payload};
+
+  default:
+    return state;
   }
-}
+};
 
-export default reducer
+export default reducer;

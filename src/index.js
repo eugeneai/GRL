@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux';
 
 import './index.scss';
-import '../node_modules/@fortawesome/fontawesome-free/css/all.css'
+import '../node_modules/@fortawesome/fontawesome-free/css/all.css';
 import "../node_modules/bootstrap/scss/bootstrap.scss";
-import store from './store'
+import store from './store';
 import RouterWrapper from "./RouterWrapper";
 
 import L from "leaflet";
