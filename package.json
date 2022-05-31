@@ -10,7 +10,7 @@
     "@testing-library/user-event": "latest",
     "bootstrap": "latest",
     "cors": "latest",
-    "leaflet": "git+https://github.com/Leaflet/Leaflet.git#9aafb0dc62a9a19dbd9568df4c8933c0cc0582ec",
+    "leaflet": "latest",
     "node-sass": "latest",
     "react": "latest",
     "react-dom": "latest",
