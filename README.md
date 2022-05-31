@@ -1,7 +1,9 @@
 # COmpiling and running this
 
-`yarn`
-`yarn start`
+```
+yarn
+yarn start
+```
 
 # Getting Started with Create React App
 
