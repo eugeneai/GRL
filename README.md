@@ -1,9 +1,14 @@
-# COmpiling and running this
+# Compiling and running this project
 
 ```
-yarn
-yarn start
+# Installing
+npm install
+
+# Compiling and running in a development mode
+npm start
 ```
+
+Point your browser to http://localhost:3000/
 
 # Getting Started with Create React App
 
