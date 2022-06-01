@@ -14,16 +14,16 @@ class CustomRange extends React.Component {
   
   async change() {
     if (this.props.isUse) {
-      await this.props.dispatch({type: "TOGGLE_ACTIVE_TAB"})
-      await this.props.dispatch({type: "SET_LINE_WIDTH", payload: this.state.values[0]})
-      await this.props.dispatch({type: "TOGGLE_ACTIVE_TAB"})
+      await this.props.dispatch({type: "TOGGLE_ACTIVE_TAB"});
+      await this.props.dispatch({type: "SET_LINE_WIDTH", payload: this.state.values[0]});
+      await this.props.dispatch({type: "TOGGLE_ACTIVE_TAB"});
     } else {
-      await this.props.dispatch({type: "SET_LINE_WIDTH", payload: this.state.values[0]})
+      await this.props.dispatch({type: "SET_LINE_WIDTH", payload: this.state.values[0]});
     }
   }
   
   render() {
-    const { width } = this.props
+    const { width } = this.props;
     
     return (
         <Range
@@ -32,8 +32,8 @@ class CustomRange extends React.Component {
           min={MIN}
           max={MAX}
           onChange={(values) => {
-            this.setState({values})
-            this.change(values[0])
+            this.setState({values});
+            this.change(values[0]);
           }}
           renderTrack={({ props, children }) => (
             <div
@@ -95,4 +95,5 @@ class CustomRange extends React.Component {
     );
   }
 }
-export default connect()(CustomRange)
+
+export default connect()(CustomRange);

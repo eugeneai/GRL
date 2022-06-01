@@ -4,8 +4,8 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 
 import './index.scss';
-// import '../node_modules/@fortawesome/fontawesome-free/css/all.css';
-// import "../node_modules/bootstrap/scss/bootstrap.scss";
+import './components/@fortawesome/fontawesome-free/css/all.css';
+import "./components/bootstrap/scss/bootstrap.scss";
 import store from './store';
 import RouterWrapper from "./RouterWrapper";
 

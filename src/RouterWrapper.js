@@ -1,6 +1,7 @@
 import React from 'react';
-// import {BrowserRouter, Route, Switch} from "react-router-dom";
 import {BrowserRouter, Route} from "react-router-dom";
+// import {BrowserRouter, Route, Switch} from "react-router-dom";  
+// add Switch between BrowseRouter ans Route tags below
 
 import MapApplication from "./pages/MapApplication";
 
