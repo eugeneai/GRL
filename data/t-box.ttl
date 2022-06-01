@@ -1,0 +1,883 @@
+@prefix : <http://irnok.net/ontologies/ActiveFaultsTerms#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix af: <http://irnok.net/ontologies/ActiveFaults#> .
+@prefix aft: <http://irnok.net/ontologies/ActiveFaultsTerms#> .
+@base <http://irnok.net/ontologies/ActiveFaultsTerms> .
+
+<http://irnok.net/ontologies/ActiveFaultsTerms> rdf:type owl:Ontology .
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://irnok.net/ontologies/ActiveFaults#Absolute_deformation_age
+aft:Absolute_deformation_age rdf:type owl:DatatypeProperty ;
+                                      rdfs:domain [ rdf:type owl:Restriction ;
+                                                    owl:onProperty owl:topObjectProperty ;
+                                                    owl:someValuesFrom aft:Fault
+                                                  ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Absolute_deformation_age_Q
+aft:Absolute_deformation_age_Q rdf:type owl:DatatypeProperty ;
+                                        rdfs:domain [ rdf:type owl:Restriction ;
+                                                      owl:onProperty owl:topObjectProperty ;
+                                                      owl:someValuesFrom aft:Fault
+                                                    ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Activity_degree
+aft:Activity_degree rdf:type owl:DatatypeProperty ;
+                             rdfs:domain [ rdf:type owl:Restriction ;
+                                           owl:onProperty owl:topObjectProperty ;
+                                           owl:someValuesFrom aft:Fault
+                                         ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Associated_CSS
+aft:Associated_CSS rdf:type owl:DatatypeProperty ,
+                                     owl:FunctionalProperty ;
+                            rdfs:domain [ rdf:type owl:Restriction ;
+                                          owl:onProperty owl:topObjectProperty ;
+                                          owl:someValuesFrom aft:Fault
+                                        ] ;
+                            rdfs:label "Associated_CSS"@en ,
+                                       "Ассоциируемый КСИ"@ru .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Associated_IGGSS
+aft:Associated_IGGSS rdf:type owl:DatatypeProperty ;
+                              rdfs:domain [ rdf:type owl:Restriction ;
+                                            owl:onProperty owl:topObjectProperty ;
+                                            owl:someValuesFrom aft:Fault
+                                          ] ;
+                              rdfs:label "Associated_IGGSS"@en ,
+                                         "Ассоциируемые ИГГСИ"@ru .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Averaged_slip_rate_Q
+aft:Averaged_slip_rate_Q rdf:type owl:DatatypeProperty ;
+                                  rdfs:domain [ rdf:type owl:Restriction ;
+                                                owl:onProperty owl:topObjectProperty ;
+                                                owl:someValuesFrom aft:Fault
+                                              ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Averaged_slip_rate_mm_year
+aft:Averaged_slip_rate_mm_year rdf:type owl:DatatypeProperty ;
+                                        rdfs:domain [ rdf:type owl:Restriction ;
+                                                      owl:onProperty owl:topObjectProperty ;
+                                                      owl:someValuesFrom aft:Fault
+                                                    ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Compiler
+aft:Compiler rdf:type owl:DatatypeProperty ;
+                      rdfs:domain [ rdf:type owl:Restriction ;
+                                    owl:onProperty owl:topObjectProperty ;
+                                    owl:someValuesFrom aft:Fault
+                                  ] ;
+                      rdfs:label "Compiler"@en ,
+                                 "ФИО составителя"@ru .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Date
+aft:Date rdf:type owl:DatatypeProperty ;
+                  rdfs:domain [ rdf:type owl:Restriction ;
+                                owl:onProperty owl:topObjectProperty ;
+                                owl:someValuesFrom aft:Fault
+                              ] ;
+                  rdfs:label "Date"@en ,
+                             "Дата обновления"@ru .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Depth_Q
+aft:Depth_Q rdf:type owl:DatatypeProperty ;
+                     rdfs:domain [ rdf:type owl:Restriction ;
+                                   owl:onProperty owl:topObjectProperty ;
+                                   owl:someValuesFrom aft:Fault
+                                 ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Depth_km
+aft:Depth_km rdf:type owl:DatatypeProperty ;
+                      rdfs:domain [ rdf:type owl:Restriction ;
+                                    owl:onProperty owl:topObjectProperty ;
+                                    owl:someValuesFrom aft:Fault
+                                  ] ;
+                      rdfs:label "Depth_km"@en ,
+                                 "Глубина (Длина пронкновения)"@ru .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Dip_angle
+aft:Dip_angle rdf:type owl:DatatypeProperty ;
+                       rdfs:domain [ rdf:type owl:Restriction ;
+                                     owl:onProperty owl:topObjectProperty ;
+                                     owl:someValuesFrom aft:Fault
+                                   ] ;
+                       rdfs:label "Dip_angle"@en ,
+                                  "Угол падения"@ru .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Dip_angle_Q
+aft:Dip_angle_Q rdf:type owl:DatatypeProperty ;
+                         rdfs:domain [ rdf:type owl:Restriction ;
+                                       owl:onProperty owl:topObjectProperty ;
+                                       owl:someValuesFrom aft:Fault
+                                     ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Dip_azimuth
+aft:Dip_azimuth rdf:type owl:DatatypeProperty ;
+                         rdfs:domain [ rdf:type owl:Restriction ;
+                                       owl:onProperty owl:topObjectProperty ;
+                                       owl:someValuesFrom aft:Fault
+                                     ] ;
+                         rdfs:comment "Азимут падения разлома в градусах"@ru ;
+                         rdfs:label "Dip_azimut"@en ,
+                                    "Азимут падения"@ru .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Dip_azimuth_Q
+aft:Dip_azimuth_Q rdf:type owl:DatatypeProperty ;
+                           rdfs:domain [ rdf:type owl:Restriction ;
+                                         owl:onProperty owl:topObjectProperty ;
+                                         owl:someValuesFrom aft:Fault
+                                       ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Elapsed_time_Q
+aft:Elapsed_time_Q rdf:type owl:DatatypeProperty ;
+                            rdfs:domain [ rdf:type owl:Restriction ;
+                                          owl:onProperty owl:topObjectProperty ;
+                                          owl:someValuesFrom aft:Fault
+                                        ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Elapsed_time_years
+aft:Elapsed_time_years rdf:type owl:DatatypeProperty ;
+                                rdfs:domain [ rdf:type owl:Restriction ;
+                                              owl:onProperty owl:topObjectProperty ;
+                                              owl:someValuesFrom aft:Fault
+                                            ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Engineering_geological_features
+aft:Engineering_geological_features rdf:type owl:DatatypeProperty ;
+                                             rdfs:domain [ rdf:type owl:Restriction ;
+                                                           owl:onProperty owl:topObjectProperty ;
+                                                           owl:someValuesFrom aft:Fault
+                                                         ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Engineering_geological_grade
+aft:Engineering_geological_grade rdf:type owl:DatatypeProperty ;
+                                          rdfs:domain [ rdf:type owl:Restriction ;
+                                                        owl:onProperty owl:topObjectProperty ;
+                                                        owl:someValuesFrom aft:Fault
+                                                      ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Geomorphological_features
+aft:Geomorphological_features rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain [ rdf:type owl:Restriction ;
+                                                     owl:onProperty owl:topObjectProperty ;
+                                                     owl:someValuesFrom aft:Fault
+                                                   ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Geomorphological_grade
+aft:Geomorphological_grade rdf:type owl:DatatypeProperty ;
+                                    rdfs:domain [ rdf:type owl:Restriction ;
+                                                  owl:onProperty owl:topObjectProperty ;
+                                                  owl:someValuesFrom aft:Fault
+                                                ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Geophysical_features
+aft:Geophysical_features rdf:type owl:DatatypeProperty ;
+                                  rdfs:domain [ rdf:type owl:Restriction ;
+                                                owl:onProperty owl:topObjectProperty ;
+                                                owl:someValuesFrom aft:Fault
+                                              ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Geophysical_grade
+aft:Geophysical_grade rdf:type owl:DatatypeProperty ;
+                               rdfs:domain [ rdf:type owl:Restriction ;
+                                             owl:onProperty owl:topObjectProperty ;
+                                             owl:someValuesFrom aft:Fault
+                                           ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Gydrogeological_features
+aft:Gydrogeological_features rdf:type owl:DatatypeProperty ;
+                                      rdfs:domain [ rdf:type owl:Restriction ;
+                                                    owl:onProperty owl:topObjectProperty ;
+                                                    owl:someValuesFrom aft:Fault
+                                                  ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Gydrogeological_grade
+aft:Gydrogeological_grade rdf:type owl:DatatypeProperty ;
+                                   rdfs:domain [ rdf:type owl:Restriction ;
+                                                 owl:onProperty owl:topObjectProperty ;
+                                                 owl:someValuesFrom aft:Fault
+                                               ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#ID
+aft:ID rdf:type owl:DatatypeProperty ;
+                rdfs:domain [ rdf:type owl:Restriction ;
+                              owl:onProperty owl:topObjectProperty ;
+                              owl:someValuesFrom aft:Fault
+                            ] ;
+                rdfs:comment "Первичный ключ, идентифицирующий разлом (например, RUAF_1 – RUssian Active Fault, нижнее подчеркивание, порядковый номер – для разломов, расположенных на территории РФ)"@ru ;
+                rdfs:label "ID разлома"@ru .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Last_activation_age
+aft:Last_activation_age rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain [ rdf:type owl:Restriction ;
+                                               owl:onProperty owl:topObjectProperty ;
+                                               owl:someValuesFrom aft:Fault
+                                             ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Last_activation_age_index
+aft:Last_activation_age_index rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain [ rdf:type owl:Restriction ;
+                                                     owl:onProperty owl:topObjectProperty ;
+                                                     owl:someValuesFrom aft:Fault
+                                                   ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Last_historical_earthquake
+aft:Last_historical_earthquake rdf:type owl:DatatypeProperty ;
+                                        rdfs:domain [ rdf:type owl:Restriction ;
+                                                      owl:onProperty owl:topObjectProperty ;
+                                                      owl:someValuesFrom aft:Fault
+                                                    ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Last_historical_earthquake_Q
+aft:Last_historical_earthquake_Q rdf:type owl:DatatypeProperty ;
+                                          rdfs:domain [ rdf:type owl:Restriction ;
+                                                        owl:onProperty owl:topObjectProperty ;
+                                                        owl:someValuesFrom aft:Fault
+                                                      ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Lateral_max_slip_per_event_Q
+aft:Lateral_max_slip_per_event_Q rdf:type owl:DatatypeProperty ;
+                                          rdfs:domain [ rdf:type owl:Restriction ;
+                                                        owl:onProperty owl:topObjectProperty ;
+                                                        owl:someValuesFrom aft:Fault
+                                                      ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Lateral_max_slip_per_event_m
+aft:Lateral_max_slip_per_event_m rdf:type owl:DatatypeProperty ;
+                                          rdfs:domain [ rdf:type owl:Restriction ;
+                                                        owl:onProperty owl:topObjectProperty ;
+                                                        owl:someValuesFrom aft:Fault
+                                                      ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Length_Q
+aft:Length_Q rdf:type owl:DatatypeProperty ;
+                      rdfs:domain [ rdf:type owl:Restriction ;
+                                    owl:onProperty owl:topObjectProperty ;
+                                    owl:someValuesFrom aft:Fault
+                                  ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Length_km
+aft:Length_km rdf:type owl:DatatypeProperty ;
+                       rdfs:domain [ rdf:type owl:Restriction ;
+                                     owl:onProperty owl:topObjectProperty ;
+                                     owl:someValuesFrom aft:Fault
+                                   ] ;
+                       rdfs:label "Length_km"@en ,
+                                  "Длина"@ru .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Location
+aft:Location rdf:type owl:DatatypeProperty ;
+                      rdfs:domain [ rdf:type owl:Restriction ;
+                                    owl:onProperty owl:topObjectProperty ;
+                                    owl:someValuesFrom aft:Fault
+                                  ] ;
+                      rdfs:comment "Краткая информация о местоположении разлома с возможной привязкой к географическим объектам"@ru ;
+                      rdfs:label "Location"@en ,
+                                 "Географическое положение"@ru .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Meteorological_features
+aft:Meteorological_features rdf:type owl:DatatypeProperty ;
+                                     rdfs:domain [ rdf:type owl:Restriction ;
+                                                   owl:onProperty owl:topObjectProperty ;
+                                                   owl:someValuesFrom aft:Fault
+                                                 ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Meteorological_grade
+aft:Meteorological_grade rdf:type owl:DatatypeProperty ;
+                                  rdfs:domain [ rdf:type owl:Restriction ;
+                                                owl:onProperty owl:topObjectProperty ;
+                                                owl:someValuesFrom aft:Fault
+                                              ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Name
+aft:Name rdf:type owl:DatatypeProperty ;
+                  rdfs:domain [ rdf:type owl:Restriction ;
+                                owl:onProperty owl:topObjectProperty ;
+                                owl:someValuesFrom aft:Fault
+                              ] ;
+                  rdfs:range xsd:string ;
+                  rdfs:comment "Название разлома, если таковое имеется"@ru ;
+                  rdfs:label "Name"@en ,
+                             "Название"@ru .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Paleoseismological_features
+aft:Paleoseismological_features rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain [ rdf:type owl:Restriction ;
+                                                       owl:onProperty owl:topObjectProperty ;
+                                                       owl:someValuesFrom aft:Fault
+                                                     ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Paleoseismological_grade
+aft:Paleoseismological_grade rdf:type owl:DatatypeProperty ;
+                                      rdfs:domain [ rdf:type owl:Restriction ;
+                                                    owl:onProperty owl:topObjectProperty ;
+                                                    owl:someValuesFrom aft:Fault
+                                                  ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Potential_Ms_max
+aft:Potential_Ms_max rdf:type owl:DatatypeProperty ;
+                              rdfs:domain [ rdf:type owl:Restriction ;
+                                            owl:onProperty owl:topObjectProperty ;
+                                            owl:someValuesFrom aft:Fault
+                                          ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Potential_Ms_max_Q
+aft:Potential_Ms_max_Q rdf:type owl:DatatypeProperty ;
+                                rdfs:domain [ rdf:type owl:Restriction ;
+                                              owl:onProperty owl:topObjectProperty ;
+                                              owl:someValuesFrom aft:Fault
+                                            ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Potential_Mw_max
+aft:Potential_Mw_max rdf:type owl:DatatypeProperty ;
+                              rdfs:domain [ rdf:type owl:Restriction ;
+                                            owl:onProperty owl:topObjectProperty ;
+                                            owl:someValuesFrom aft:Fault
+                                          ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Potential_Mw_max_Q
+aft:Potential_Mw_max_Q rdf:type owl:DatatypeProperty ;
+                                rdfs:domain [ rdf:type owl:Restriction ;
+                                              owl:onProperty owl:topObjectProperty ;
+                                              owl:someValuesFrom aft:Fault
+                                            ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Recurrence_interval
+aft:Recurrence_interval rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain [ rdf:type owl:Restriction ;
+                                               owl:onProperty owl:topObjectProperty ;
+                                               owl:someValuesFrom aft:Fault
+                                             ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Recurrence_interval_Q
+aft:Recurrence_interval_Q rdf:type owl:DatatypeProperty ;
+                                   rdfs:domain [ rdf:type owl:Restriction ;
+                                                 owl:onProperty owl:topObjectProperty ;
+                                                 owl:someValuesFrom aft:Fault
+                                               ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Reliability_class
+aft:Reliability_class rdf:type owl:DatatypeProperty ;
+                               rdfs:domain [ rdf:type owl:Restriction ;
+                                             owl:onProperty owl:topObjectProperty ;
+                                             owl:someValuesFrom aft:Fault
+                                           ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Seismic_activity_of_fault
+aft:Seismic_activity_of_fault rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain [ rdf:type owl:Restriction ;
+                                                     owl:onProperty owl:topObjectProperty ;
+                                                     owl:someValuesFrom aft:Fault
+                                                   ] ;
+                                       rdfs:range xsd:string ;
+                                       rdfs:label "Seismic_activity_of_fault"@en ,
+                                                  "Сейсмоактивность"@ru .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Seismological_features
+aft:Seismological_features rdf:type owl:DatatypeProperty ;
+                                    rdfs:domain [ rdf:type owl:Restriction ;
+                                                  owl:onProperty owl:topObjectProperty ;
+                                                  owl:someValuesFrom aft:Fault
+                                                ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Seismological_grade
+aft:Seismological_grade rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain [ rdf:type owl:Restriction ;
+                                               owl:onProperty owl:topObjectProperty ;
+                                               owl:someValuesFrom aft:Fault
+                                             ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Slip_rate_Q
+aft:Slip_rate_Q rdf:type owl:DatatypeProperty ;
+                         rdfs:domain [ rdf:type owl:Restriction ;
+                                       owl:onProperty owl:topObjectProperty ;
+                                       owl:someValuesFrom aft:Fault
+                                     ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Slip_rate_features
+aft:Slip_rate_features rdf:type owl:DatatypeProperty ;
+                                rdfs:domain [ rdf:type owl:Restriction ;
+                                              owl:onProperty owl:topObjectProperty ;
+                                              owl:someValuesFrom aft:Fault
+                                            ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Slip_rate_grade
+aft:Slip_rate_grade rdf:type owl:DatatypeProperty ;
+                             rdfs:domain [ rdf:type owl:Restriction ;
+                                           owl:onProperty owl:topObjectProperty ;
+                                           owl:someValuesFrom aft:Fault
+                                         ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Slip_rate_mm_year
+aft:Slip_rate_mm_year rdf:type owl:DatatypeProperty ;
+                               rdfs:domain [ rdf:type owl:Restriction ;
+                                             owl:onProperty owl:topObjectProperty ;
+                                             owl:someValuesFrom aft:Fault
+                                           ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Slip_sense
+aft:Slip_sense rdf:type owl:DatatypeProperty ;
+                        rdfs:domain [ rdf:type owl:Restriction ;
+                                      owl:onProperty owl:topObjectProperty ;
+                                      owl:someValuesFrom aft:Fault
+                                    ] ;
+                        rdfs:label "Slip_sense"@en ,
+                                   "Кинематика"@ru .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Slip_sense_Index
+aft:Slip_sense_Index rdf:type owl:DatatypeProperty ;
+                              rdfs:domain [ rdf:type owl:Restriction ;
+                                            owl:onProperty owl:topObjectProperty ;
+                                            owl:someValuesFrom aft:Fault
+                                          ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Slip_sense_Q
+aft:Slip_sense_Q rdf:type owl:DatatypeProperty ;
+                          rdfs:domain [ rdf:type owl:Restriction ;
+                                        owl:onProperty owl:topObjectProperty ;
+                                        owl:someValuesFrom aft:Fault
+                                      ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Strike
+aft:Strike rdf:type owl:DatatypeProperty ;
+                    rdfs:domain [ rdf:type owl:Restriction ;
+                                  owl:onProperty owl:topObjectProperty ;
+                                  owl:someValuesFrom aft:Fault
+                                ] ;
+                    rdfs:range xsd:string ;
+                    rdfs:label "Strike"@en ,
+                               "Простирание"@ru .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Strike_Q
+aft:Strike_Q rdf:type owl:DatatypeProperty ;
+                      rdfs:domain [ rdf:type owl:Restriction ;
+                                    owl:onProperty owl:topObjectProperty ;
+                                    owl:someValuesFrom aft:Fault
+                                  ] ;
+                      rdfs:range xsd:string .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Structural_geological_features
+aft:Structural_geological_features rdf:type owl:DatatypeProperty ;
+                                            rdfs:domain [ rdf:type owl:Restriction ;
+                                                          owl:onProperty owl:topObjectProperty ;
+                                                          owl:someValuesFrom aft:Fault
+                                                        ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Structural_geological_grade
+aft:Structural_geological_grade rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain [ rdf:type owl:Restriction ;
+                                                       owl:onProperty owl:topObjectProperty ;
+                                                       owl:someValuesFrom aft:Fault
+                                                     ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Total_Ceno
+aft:Total_Ceno rdf:type owl:DatatypeProperty ;
+                        rdfs:domain [ rdf:type owl:Restriction ;
+                                      owl:onProperty owl:topObjectProperty ;
+                                      owl:someValuesFrom aft:Fault
+                                    ] ;
+                        rdfs:label "Total_Ceno"@en ,
+                                   "Суммарная амплитуда горизонтального смещения за кайнозой"@ru .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Total_Cenozoic_lateral_slip_Q
+aft:Total_Cenozoic_lateral_slip_Q rdf:type owl:DatatypeProperty ;
+                                           rdfs:domain [ rdf:type owl:Restriction ;
+                                                         owl:onProperty owl:topObjectProperty ;
+                                                         owl:someValuesFrom aft:Fault
+                                                       ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Total_Cenozoic_lateral_slip_m
+aft:Total_Cenozoic_lateral_slip_m rdf:type owl:DatatypeProperty ;
+                                           rdfs:domain [ rdf:type owl:Restriction ;
+                                                         owl:onProperty owl:topObjectProperty ;
+                                                         owl:someValuesFrom aft:Fault
+                                                       ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Total_Cenozoic_vertical_slip_Q
+aft:Total_Cenozoic_vertical_slip_Q rdf:type owl:DatatypeProperty ;
+                                            rdfs:domain [ rdf:type owl:Restriction ;
+                                                          owl:onProperty owl:topObjectProperty ;
+                                                          owl:someValuesFrom aft:Fault
+                                                        ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Total_Cenozoic_vertical_slip_m
+aft:Total_Cenozoic_vertical_slip_m rdf:type owl:DatatypeProperty ;
+                                            rdfs:domain [ rdf:type owl:Restriction ;
+                                                          owl:onProperty owl:topObjectProperty ;
+                                                          owl:someValuesFrom aft:Fault
+                                                        ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Total_activity_grade
+aft:Total_activity_grade rdf:type owl:DatatypeProperty ;
+                                  rdfs:domain [ rdf:type owl:Restriction ;
+                                                owl:onProperty owl:topObjectProperty ;
+                                                owl:someValuesFrom aft:Fault
+                                              ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Total_max_slip_per_event_Q
+aft:Total_max_slip_per_event_Q rdf:type owl:DatatypeProperty ;
+                                        rdfs:domain [ rdf:type owl:Restriction ;
+                                                      owl:onProperty owl:topObjectProperty ;
+                                                      owl:someValuesFrom aft:Fault
+                                                    ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Total_max_slip_per_event_m
+aft:Total_max_slip_per_event_m rdf:type owl:DatatypeProperty ;
+                                        rdfs:domain [ rdf:type owl:Restriction ;
+                                                      owl:onProperty owl:topObjectProperty ;
+                                                      owl:someValuesFrom aft:Fault
+                                                    ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Vertical_max_slip_per_event_Q
+aft:Vertical_max_slip_per_event_Q rdf:type owl:DatatypeProperty ;
+                                           rdfs:domain [ rdf:type owl:Restriction ;
+                                                         owl:onProperty owl:topObjectProperty ;
+                                                         owl:someValuesFrom aft:Fault
+                                                       ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Vertical_max_slip_per_event_m
+aft:Vertical_max_slip_per_event_m rdf:type owl:DatatypeProperty ;
+                                           rdfs:domain [ rdf:type owl:Restriction ;
+                                                         owl:onProperty owl:topObjectProperty ;
+                                                         owl:someValuesFrom aft:Fault
+                                                       ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Width_dama
+aft:Width_dama rdf:type owl:DatatypeProperty ;
+                        rdfs:domain [ rdf:type owl:Restriction ;
+                                      owl:onProperty owl:topObjectProperty ;
+                                      owl:someValuesFrom aft:Fault
+                                    ] ;
+                        rdfs:label "Width_dama"@en ,
+                                   "Ширина зоны активного динамического влияния"@ru .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Width_damage_zone_Q
+aft:Width_damage_zone_Q rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain [ rdf:type owl:Restriction ;
+                                               owl:onProperty owl:topObjectProperty ;
+                                               owl:someValuesFrom aft:Fault
+                                             ] .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#Width_damage_zone_km
+aft:Width_damage_zone_km rdf:type owl:DatatypeProperty ;
+                                  rdfs:domain [ rdf:type owl:Restriction ;
+                                                owl:onProperty owl:topObjectProperty ;
+                                                owl:someValuesFrom aft:Fault
+                                              ] .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://irnok.net/ontologies/ActiveFaults#Fault
+aft:Fault rdf:type owl:Class ;
+                   rdfs:label "Fault"@en ,
+                              "Разлом"@ru .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#HistoricalFault
+aft:HistoricalFault rdf:type owl:Class ;
+                             owl:equivalentClass [ owl:intersectionOf ( aft:Fault
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty aft:Last_activation_age ;
+                                                                          owl:hasValue "Историческое"
+                                                                        ]
+                                                                      ) ;
+                                                   rdf:type owl:Class
+                                                 ] ;
+                             rdfs:subClassOf aft:Fault ;
+                             rdfs:label "Исторический разлом" .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#HoloceneFault
+aft:HoloceneFault rdf:type owl:Class ;
+                           owl:equivalentClass [ owl:intersectionOf ( aft:Fault
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty aft:Last_activation_age ;
+                                                                        owl:hasValue "Голоценовое"
+                                                                      ]
+                                                                    ) ;
+                                                 rdf:type owl:Class
+                                               ] ;
+                           rdfs:subClassOf aft:Fault ;
+                           rdfs:label "Голоценовый разлом" .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#LeftNSCB
+aft:LeftNSCB rdf:type owl:Class ;
+                      owl:equivalentClass [ owl:intersectionOf ( aft:Fault
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty aft:Slip_sense ;
+                                                                   owl:hasValue "Левый сбросо-сдвиг"
+                                                                 ]
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ] ;
+                      rdfs:subClassOf aft:Fault ;
+                      rdfs:label "Левые сбросо-сдвиги"@ru .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#LeftSCB
+aft:LeftSCB rdf:type owl:Class ;
+                     owl:equivalentClass [ owl:intersectionOf ( aft:Fault
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty aft:Slip_sense ;
+                                                                  owl:hasValue "Левый сдвиг"
+                                                                ]
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ] ;
+                     rdfs:subClassOf aft:Fault ;
+                     rdfs:label "Левые сдвиги"@ru .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#LeftUSCB
+aft:LeftUSCB rdf:type owl:Class ;
+                      owl:equivalentClass [ owl:intersectionOf ( aft:Fault
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty aft:Slip_sense ;
+                                                                   owl:hasValue "Левый взбросо-сдвиг"
+                                                                 ]
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ] ;
+                      rdfs:subClassOf aft:Fault ;
+                      rdfs:label "Левые взбросо-сдвиги"@ru .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#NormalSlCB
+aft:NormalSlCB rdf:type owl:Class ;
+                        owl:equivalentClass [ owl:intersectionOf ( aft:Fault
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty aft:Slip_sense ;
+                                                                     owl:hasValue "Сброс"
+                                                                   ]
+                                                                 ) ;
+                                              rdf:type owl:Class
+                                            ] ;
+                        rdfs:subClassOf aft:Fault ;
+                        rdfs:label "Сбросы"@ru .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#PleistoceneFault
+aft:PleistoceneFault rdf:type owl:Class ;
+                              owl:equivalentClass [ owl:intersectionOf ( aft:Fault
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty aft:Last_activation_age ;
+                                                                           owl:hasValue "Плейстоценовое"
+                                                                         ]
+                                                                       ) ;
+                                                    rdf:type owl:Class
+                                                  ] ;
+                              rdfs:subClassOf aft:Fault ;
+                              rdfs:label "Плейстоценовый разлом" .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#PlioceneFault
+aft:PlioceneFault rdf:type owl:Class ;
+                           owl:equivalentClass [ owl:intersectionOf ( aft:Fault
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty aft:Last_activation_age ;
+                                                                        owl:hasValue "Плиоценовое"
+                                                                      ]
+                                                                    ) ;
+                                                 rdf:type owl:Class
+                                               ] ;
+                           rdfs:subClassOf aft:Fault ;
+                           rdfs:label "Плиоценовый разлом" .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#RightNSCB
+aft:RightNSCB rdf:type owl:Class ;
+                       owl:equivalentClass [ owl:intersectionOf ( aft:Fault
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty aft:Slip_sense ;
+                                                                    owl:hasValue "Правый сбросо-сдвиг"
+                                                                  ]
+                                                                ) ;
+                                             rdf:type owl:Class
+                                           ] ;
+                       rdfs:subClassOf aft:Fault ;
+                       rdfs:label "Правые сбросо-сдвиги"@ru .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#RightSCB
+aft:RightSCB rdf:type owl:Class ;
+                      owl:equivalentClass [ owl:intersectionOf ( aft:Fault
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty aft:Slip_sense ;
+                                                                   owl:hasValue "Правый сдвиг"
+                                                                 ]
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ] ;
+                      rdfs:subClassOf aft:Fault ;
+                      rdfs:label "Правые сдвиги"@ru .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#RightUSCB
+aft:RightUSCB rdf:type owl:Class ;
+                       owl:equivalentClass [ owl:intersectionOf ( aft:Fault
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty aft:Slip_sense ;
+                                                                    owl:hasValue "Правый взбросо-сдвиг"
+                                                                  ]
+                                                                ) ;
+                                             rdf:type owl:Class
+                                           ] ;
+                       rdfs:subClassOf aft:Fault ;
+                       rdfs:label "Правые взбросо-сдвиги"@ru .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#SeismicallyActiveFault
+aft:SeismicallyActiveFault rdf:type owl:Class ;
+                                    owl:equivalentClass [ owl:intersectionOf ( aft:Fault
+                                                                               [ rdf:type owl:Restriction ;
+                                                                                 owl:onProperty aft:Seismic_activity_of_fault ;
+                                                                                 owl:hasValue "Да"
+                                                                               ]
+                                                                             ) ;
+                                                          rdf:type owl:Class
+                                                        ] ;
+                                    rdfs:subClassOf aft:Fault ;
+                                    rdfs:label "Сейсмоактивный разлом" .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#ShiftNormalCB
+aft:ShiftNormalCB rdf:type owl:Class ;
+                           owl:equivalentClass [ owl:intersectionOf ( aft:Fault
+                                                                      [ rdf:type owl:Class ;
+                                                                        owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                                        owl:onProperty aft:Slip_sense ;
+                                                                                        owl:hasValue "Левый сдвиго-взброс"
+                                                                                      ]
+                                                                                      [ rdf:type owl:Restriction ;
+                                                                                        owl:onProperty aft:Slip_sense ;
+                                                                                        owl:hasValue "Правый сдвиго-взброс"
+                                                                                      ]
+                                                                                    )
+                                                                      ]
+                                                                    ) ;
+                                                 rdf:type owl:Class
+                                               ] ;
+                           rdfs:subClassOf aft:Fault ;
+                           rdfs:label "Сдвиго-сбросы"@ru .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#ShiftUpCB
+aft:ShiftUpCB rdf:type owl:Class ;
+                       owl:equivalentClass [ owl:intersectionOf ( aft:Fault
+                                                                  [ rdf:type owl:Class ;
+                                                                    owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty aft:Slip_sense ;
+                                                                                    owl:hasValue "Левый сдвиго-сброс"
+                                                                                  ]
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty aft:Slip_sense ;
+                                                                                    owl:hasValue "Правый сдвиго-сброс"
+                                                                                  ]
+                                                                                )
+                                                                  ]
+                                                                ) ;
+                                             rdf:type owl:Class
+                                           ] ;
+                       rdfs:subClassOf aft:Fault ;
+                       rdfs:label "Сдвиго-взбросы"@ru .
+
+
+###  http://irnok.net/ontologies/ActiveFaults#UpLiftCB
+aft:UpLiftCB rdf:type owl:Class ;
+                      owl:equivalentClass [ owl:intersectionOf ( aft:Fault
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty aft:Slip_sense ;
+                                                                   owl:hasValue "Взброс"
+                                                                 ]
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ] ;
+                      rdfs:subClassOf aft:Fault ;
+                      rdfs:label "Взбросы"@ru .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
